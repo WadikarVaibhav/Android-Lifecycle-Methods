@@ -8,4 +8,6 @@
     <string name="on_resume">onResume</string>
     <string name="reset">RESET</string>
     <string name="on_destroy">onDestroy</string>
+    <string name="on_save_instance_state">onSaveInstanceState</string>
+    <string name="on_restore_instance_state">onRestoreInstanceState</string>
 </resources>
