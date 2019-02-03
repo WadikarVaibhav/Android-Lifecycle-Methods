@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         var onCreateCount = getValue(Constants.ON_CREATE_COUNT)
         setValue(Constants.ON_CREATE_COUNT, ++onCreateCount)
         showAllRecords()
+        Log.i(Constants.TAG, Constants.ON_CREATE)
 
         reset.setOnClickListener {
             reset()
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         var onStartCount = getValue(Constants.ON_START_COUNT)
         setValue(Constants.ON_START_COUNT, ++onStartCount)
         onStart.text = onStartCount.toString()
+        Log.i(Constants.TAG, Constants.ON_START)
     }
 
     override fun onResume() {
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         var onResumeCount = getValue(Constants.ON_RESUME_COUNT)
         setValue(Constants.ON_RESUME_COUNT, ++onResumeCount)
         onResume.text = onResumeCount.toString()
+        Log.i(Constants.TAG, Constants.ON_RESUME)
     }
 
     override fun onRestart() {
@@ -40,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         var onRestartCount = getValue(Constants.ON_RESTART_COUNT)
         setValue(Constants.ON_RESTART_COUNT, ++onRestartCount)
         onRestart.text = onRestartCount.toString()
+        Log.i(Constants.TAG, Constants.ON_RESTART)
     }
 
     override fun onPause() {
@@ -47,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         var onPauseCount = getValue(Constants.ON_PAUSE_COUNT)
         setValue(Constants.ON_PAUSE_COUNT, ++onPauseCount)
         onPause.text = onPauseCount.toString()
+        Log.i(Constants.TAG, Constants.ON_PAUSE)
     }
 
     override fun onStop() {
@@ -54,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         var onStopCount = getValue(Constants.ON_STOP_COUNT)
         setValue(Constants.ON_STOP_COUNT, ++onStopCount)
         onStop.text = onStopCount.toString()
+        Log.i(Constants.TAG, Constants.ON_STOP)
     }
 
     override fun onDestroy() {
@@ -61,20 +67,23 @@ class MainActivity : AppCompatActivity() {
         var onDestroyCount = getValue(Constants.ON_DESTROY_COUNT)
         setValue(Constants.ON_DESTROY_COUNT, ++onDestroyCount)
         onDestroy.text = onDestroyCount.toString()
+        Log.i(Constants.TAG, Constants.ON_DESTROY)
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
-        var onSaveInstanceStateCount = getValue(Constants.ON_SAVE_INSTANCE_STATE)
-        setValue(Constants.ON_SAVE_INSTANCE_STATE, ++onSaveInstanceStateCount)
+        var onSaveInstanceStateCount = getValue(Constants.ON_SAVE_INSTANCE_STATE_COUNT)
+        setValue(Constants.ON_SAVE_INSTANCE_STATE_COUNT, ++onSaveInstanceStateCount)
         onSaveInstanceState.text = onSaveInstanceStateCount.toString()
+        Log.i(Constants.TAG, Constants.ON_SAVE_INSTANCE_STATE)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
-        var onRestoreInstanceStateCount = getValue(Constants.ON_RESTORE_INSTANCE_STATE)
-        setValue(Constants.ON_RESTORE_INSTANCE_STATE, ++onRestoreInstanceStateCount)
+        var onRestoreInstanceStateCount = getValue(Constants.ON_RESTORE_INSTANCE_STATE_COUNT)
+        setValue(Constants.ON_RESTORE_INSTANCE_STATE_COUNT, ++onRestoreInstanceStateCount)
         onSaveInstanceState.text = onRestoreInstanceStateCount.toString()
+        Log.i(Constants.TAG, Constants.ON_RESTORE_INSTANCE_STATE)
     }
 
     fun getValue(key: String): Int {
@@ -98,8 +107,8 @@ class MainActivity : AppCompatActivity() {
         onPause.text = sharedPreferences.getInt(Constants.ON_PAUSE_COUNT, 0).toString()
         onStop.text = sharedPreferences.getInt(Constants.ON_STOP_COUNT, 0).toString()
         onDestroy.text = sharedPreferences.getInt(Constants.ON_DESTROY_COUNT, 0).toString()
-        onSaveInstanceState.text = sharedPreferences.getInt(Constants.ON_SAVE_INSTANCE_STATE, 0).toString()
-        onRestoreInstanceState.text = sharedPreferences.getInt(Constants.ON_RESTORE_INSTANCE_STATE, 0).toString()
+        onSaveInstanceState.text = sharedPreferences.getInt(Constants.ON_SAVE_INSTANCE_STATE_COUNT, 0).toString()
+        onRestoreInstanceState.text = sharedPreferences.getInt(Constants.ON_RESTORE_INSTANCE_STATE_COUNT, 0).toString()
     }
 
     fun reset() {
