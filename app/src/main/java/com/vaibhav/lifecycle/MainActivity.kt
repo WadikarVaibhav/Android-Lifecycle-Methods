@@ -76,10 +76,33 @@ class MainActivity : AppCompatActivity() {
         setValue(Constants.ON_SAVE_INSTANCE_STATE_COUNT, ++onSaveInstanceStateCount)
         onSaveInstanceState.text = onSaveInstanceStateCount.toString()
         Log.i(Constants.TAG, Constants.ON_SAVE_INSTANCE_STATE)
+
+        if (outState != null) {
+            outState.putInt(Constants.ON_CREATE_COUNT, getValue(Constants.ON_CREATE_COUNT))
+            outState.putInt(Constants.ON_START_COUNT, getValue(Constants.ON_START_COUNT))
+            outState.putInt(Constants.ON_RESUME_COUNT, getValue(Constants.ON_RESUME_COUNT))
+            outState.putInt(Constants.ON_RESTART_COUNT, getValue(Constants.ON_RESTART_COUNT))
+            outState.putInt(Constants.ON_PAUSE_COUNT, getValue(Constants.ON_PAUSE_COUNT))
+            outState.putInt(Constants.ON_STOP_COUNT, getValue(Constants.ON_STOP_COUNT))
+            outState.putInt(Constants.ON_DESTROY_COUNT, getValue(Constants.ON_DESTROY_COUNT))
+            outState.putInt(Constants.ON_SAVE_INSTANCE_STATE_COUNT, getValue(Constants.ON_SAVE_INSTANCE_STATE_COUNT))
+            outState.putInt(Constants.ON_RESTORE_INSTANCE_STATE_COUNT, getValue(Constants.ON_RESTORE_INSTANCE_STATE_COUNT))
+        }
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
+        if (savedInstanceState != null) {
+            setValue(Constants.ON_CREATE_COUNT, savedInstanceState.getInt(Constants.ON_CREATE_COUNT))
+            setValue(Constants.ON_START_COUNT, savedInstanceState.getInt(Constants.ON_START_COUNT))
+            setValue(Constants.ON_RESUME_COUNT, savedInstanceState.getInt(Constants.ON_RESUME_COUNT))
+            setValue(Constants.ON_RESTART_COUNT, savedInstanceState.getInt(Constants.ON_RESTART_COUNT))
+            setValue(Constants.ON_PAUSE_COUNT, savedInstanceState.getInt(Constants.ON_PAUSE_COUNT))
+            setValue(Constants.ON_STOP_COUNT, savedInstanceState.getInt(Constants.ON_STOP_COUNT))
+            setValue(Constants.ON_DESTROY_COUNT, savedInstanceState.getInt(Constants.ON_DESTROY_COUNT))
+            setValue(Constants.ON_SAVE_INSTANCE_STATE_COUNT, savedInstanceState.getInt(Constants.ON_SAVE_INSTANCE_STATE_COUNT))
+            setValue(Constants.ON_RESTORE_INSTANCE_STATE_COUNT, savedInstanceState.getInt(Constants.ON_RESTORE_INSTANCE_STATE_COUNT))
+        }
         var onRestoreInstanceStateCount = getValue(Constants.ON_RESTORE_INSTANCE_STATE_COUNT)
         setValue(Constants.ON_RESTORE_INSTANCE_STATE_COUNT, ++onRestoreInstanceStateCount)
         onSaveInstanceState.text = onRestoreInstanceStateCount.toString()
