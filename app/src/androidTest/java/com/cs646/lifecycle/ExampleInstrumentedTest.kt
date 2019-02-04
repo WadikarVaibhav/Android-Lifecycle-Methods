@@ -1,4 +1,4 @@
-package com.vaibhav.lifecycle
+package com.cs646.lifecycle
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
