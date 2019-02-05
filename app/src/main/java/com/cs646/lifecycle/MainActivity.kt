@@ -6,7 +6,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.content.Context
 import android.util.Log
 
-
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         var onCreateCount = getValueFromSharedPrefs(Constants.ON_CREATE_COUNT)
         setValueInSharedPrefs(Constants.ON_CREATE_COUNT, ++onCreateCount)
         showAllRecords()
-        Log.i(Constants.TAG, Constants.ON_CREATE)
+        Log.i(Constants.ON_CREATE, onCreateCount.toString())
 
         reset.setOnClickListener {
             reset()
@@ -27,11 +26,26 @@ class MainActivity : AppCompatActivity() {
         var onStartCount = getValueFromSharedPrefs(Constants.ON_START_COUNT)
         setValueInSharedPrefs(Constants.ON_START_COUNT, ++onStartCount)
         onStart.text = onStartCount.toString()
-        Log.i(Constants.TAG, Constants.ON_START)
+        Log.i(Constants.ON_START, onStartCount.toString())
+    }
+
+    private fun compareSharedPrefWithBundle(savedInstanceState: Bundle?) {
+        if (savedInstanceState != null) {
+            Log.i(savedInstanceState.getInt(Constants.ON_CREATE_COUNT).toString(), getValueFromSharedPrefs(Constants.ON_CREATE_COUNT).toString())
+            Log.i(savedInstanceState.getInt(Constants.ON_START_COUNT).toString(), getValueFromSharedPrefs(Constants.ON_START_COUNT).toString())
+            Log.i(savedInstanceState.getInt(Constants.ON_RESUME_COUNT).toString(), getValueFromSharedPrefs(Constants.ON_RESUME_COUNT).toString())
+            Log.i(savedInstanceState.getInt(Constants.ON_RESTART_COUNT).toString(), getValueFromSharedPrefs(Constants.ON_RESTART_COUNT).toString())
+            Log.i(savedInstanceState.getInt(Constants.ON_PAUSE_COUNT).toString(), getValueFromSharedPrefs(Constants.ON_PAUSE_COUNT).toString())
+            Log.i(savedInstanceState.getInt(Constants.ON_STOP_COUNT).toString(), getValueFromSharedPrefs(Constants.ON_STOP_COUNT).toString())
+            Log.i(savedInstanceState.getInt(Constants.ON_DESTROY_COUNT).toString(), getValueFromSharedPrefs(Constants.ON_DESTROY_COUNT).toString())
+            Log.i(savedInstanceState.getInt(Constants.ON_SAVE_INSTANCE_STATE_COUNT).toString(), getValueFromSharedPrefs(Constants.ON_SAVE_INSTANCE_STATE_COUNT).toString())
+            Log.i(savedInstanceState.getInt(Constants.ON_RESTORE_INSTANCE_STATE_COUNT).toString(), getValueFromSharedPrefs(Constants.ON_RESTORE_INSTANCE_STATE_COUNT).toString())
+        }
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
+        compareSharedPrefWithBundle(savedInstanceState)
         if (savedInstanceState != null) {
             setValueInSharedPrefs(Constants.ON_CREATE_COUNT, savedInstanceState.getInt(Constants.ON_CREATE_COUNT))
             setValueInSharedPrefs(Constants.ON_START_COUNT, savedInstanceState.getInt(Constants.ON_START_COUNT))
@@ -46,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         var onRestoreInstanceStateCount = getValueFromSharedPrefs(Constants.ON_RESTORE_INSTANCE_STATE_COUNT)
         setValueInSharedPrefs(Constants.ON_RESTORE_INSTANCE_STATE_COUNT, ++onRestoreInstanceStateCount)
         onSaveInstanceState.text = onRestoreInstanceStateCount.toString()
-        Log.i(Constants.TAG, Constants.ON_RESTORE_INSTANCE_STATE)
+        Log.i(Constants.ON_RESTORE_INSTANCE_STATE, onRestoreInstanceStateCount.toString())
     }
 
     override fun onResume() {
@@ -54,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         var onResumeCount = getValueFromSharedPrefs(Constants.ON_RESUME_COUNT)
         setValueInSharedPrefs(Constants.ON_RESUME_COUNT, ++onResumeCount)
         onResume.text = onResumeCount.toString()
-        Log.i(Constants.TAG, Constants.ON_RESUME)
+        Log.i(Constants.ON_RESUME, onResumeCount.toString())
     }
 
     override fun onRestart() {
@@ -62,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         var onRestartCount = getValueFromSharedPrefs(Constants.ON_RESTART_COUNT)
         setValueInSharedPrefs(Constants.ON_RESTART_COUNT, ++onRestartCount)
         onRestart.text = onRestartCount.toString()
-        Log.i(Constants.TAG, Constants.ON_RESTART)
+        Log.i(Constants.ON_RESTART, onRestartCount.toString())
     }
 
     override fun onPause() {
@@ -70,7 +84,7 @@ class MainActivity : AppCompatActivity() {
         var onPauseCount = getValueFromSharedPrefs(Constants.ON_PAUSE_COUNT)
         setValueInSharedPrefs(Constants.ON_PAUSE_COUNT, ++onPauseCount)
         onPause.text = onPauseCount.toString()
-        Log.i(Constants.TAG, Constants.ON_PAUSE)
+        Log.i(Constants.ON_PAUSE, onPauseCount.toString())
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
@@ -78,7 +92,6 @@ class MainActivity : AppCompatActivity() {
         var onSaveInstanceStateCount = getValueFromSharedPrefs(Constants.ON_SAVE_INSTANCE_STATE_COUNT)
         setValueInSharedPrefs(Constants.ON_SAVE_INSTANCE_STATE_COUNT, ++onSaveInstanceStateCount)
         onSaveInstanceState.text = onSaveInstanceStateCount.toString()
-        Log.i(Constants.TAG, Constants.ON_SAVE_INSTANCE_STATE)
         if (outState != null) {
             outState.putInt(Constants.ON_CREATE_COUNT, getValueFromSharedPrefs(Constants.ON_CREATE_COUNT))
             outState.putInt(Constants.ON_START_COUNT, getValueFromSharedPrefs(Constants.ON_START_COUNT))
@@ -90,6 +103,8 @@ class MainActivity : AppCompatActivity() {
             outState.putInt(Constants.ON_SAVE_INSTANCE_STATE_COUNT, getValueFromSharedPrefs(Constants.ON_SAVE_INSTANCE_STATE_COUNT))
             outState.putInt(Constants.ON_RESTORE_INSTANCE_STATE_COUNT, getValueFromSharedPrefs(Constants.ON_RESTORE_INSTANCE_STATE_COUNT))
         }
+        Log.i(Constants.ON_SAVE_INSTANCE_STATE, onSaveInstanceStateCount.toString())
+
     }
 
     override fun onStop() {
@@ -97,7 +112,7 @@ class MainActivity : AppCompatActivity() {
         var onStopCount = getValueFromSharedPrefs(Constants.ON_STOP_COUNT)
         setValueInSharedPrefs(Constants.ON_STOP_COUNT, ++onStopCount)
         onStop.text = onStopCount.toString()
-        Log.i(Constants.TAG, Constants.ON_STOP)
+        Log.i(Constants.ON_STOP, onStopCount.toString())
     }
 
     override fun onDestroy() {
@@ -105,7 +120,7 @@ class MainActivity : AppCompatActivity() {
         var onDestroyCount = getValueFromSharedPrefs(Constants.ON_DESTROY_COUNT)
         setValueInSharedPrefs(Constants.ON_DESTROY_COUNT, ++onDestroyCount)
         onDestroy.text = onDestroyCount.toString()
-        Log.i(Constants.TAG, Constants.ON_DESTROY)
+        Log.i(Constants.ON_DESTROY, onDestroyCount.toString())
     }
 
     private fun getValueFromSharedPrefs(key: String): Int {

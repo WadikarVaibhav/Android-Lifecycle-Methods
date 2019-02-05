@@ -21,6 +21,5 @@ class Constants {
         const val ON_DESTROY = "onDestroy"
         const val ON_RESTORE_INSTANCE_STATE = "onRestoreInstanceState"
         const val ON_SAVE_INSTANCE_STATE = "onSaveInstanceState"
-        const val TAG = "Method Involked"
     }
 }
