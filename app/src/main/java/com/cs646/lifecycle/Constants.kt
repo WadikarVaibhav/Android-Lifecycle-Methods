@@ -1,5 +1,8 @@
 package com.cs646.lifecycle
 
+/**
+ * Constants used in MainActivity class
+ */
 class Constants {
     companion object {
         const val ON_CREATE_COUNT = "onCreateCount"

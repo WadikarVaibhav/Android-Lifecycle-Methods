@@ -15,7 +15,7 @@
                   android:layout_weight="2"
                   android:layout_height="match_parent"
                   android:text="@string/on_create" android:textSize="18sp" android:textColor="@android:color/background_dark"
-                  android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingBottom="10dp"/>
+                  android:paddingLeft="20dp" android:paddingTop="4dp" android:paddingBottom="4dp"/>
 
         <TextView android:layout_width="0dp"
                   android:layout_height="match_parent"
@@ -31,7 +31,7 @@
         <TextView android:layout_width="0dp"
                   android:layout_height="match_parent"
                   android:layout_weight="2"
-                  android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingBottom="10dp"
+                  android:paddingLeft="20dp" android:paddingTop="4dp" android:paddingBottom="4dp"
                   android:text="@string/on_start" android:textSize="18sp" android:textColor="@android:color/background_dark"/>
 
         <TextView android:layout_width="0dp"
@@ -48,7 +48,7 @@
         <TextView android:layout_width="0dp"
                   android:layout_weight="2"
                   android:layout_height="match_parent"
-                  android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingBottom="10dp"
+                  android:paddingLeft="20dp" android:paddingTop="4dp" android:paddingBottom="4dp"
                   android:text="@string/on_resume" android:textSize="18sp" android:textColor="@android:color/background_dark"/>
 
         <TextView android:layout_width="0dp"
@@ -65,7 +65,7 @@
         <TextView android:layout_width="0dp"
                   android:layout_weight="2"
                   android:layout_height="match_parent"
-                  android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingBottom="10dp"
+                  android:paddingLeft="20dp" android:paddingTop="4dp" android:paddingBottom="4dp"
                   android:text="@string/on_restart" android:textSize="18sp" android:textColor="@android:color/background_dark"/>
 
         <TextView android:layout_width="0dp"
@@ -82,7 +82,7 @@
         <TextView android:layout_width="0dp"
                   android:layout_weight="2"
                   android:layout_height="match_parent"
-                  android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingBottom="10dp"
+                  android:paddingLeft="20dp" android:paddingTop="4dp" android:paddingBottom="4dp"
                   android:text="@string/on_pause" android:textSize="18sp" android:textColor="@android:color/background_dark"/>
 
         <TextView android:layout_width="0dp"
@@ -100,7 +100,7 @@
         <TextView android:layout_width="0dp"
                   android:layout_weight="2"
                   android:layout_height="match_parent"
-                  android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingBottom="10dp"
+                  android:paddingLeft="20dp" android:paddingTop="4dp" android:paddingBottom="4dp"
                   android:text="@string/on_stop" android:textSize="18sp" android:textColor="@android:color/background_dark"/>
 
         <TextView android:layout_width="0dp"
@@ -118,7 +118,7 @@
         <TextView android:layout_width="0dp"
                   android:layout_weight="2"
                   android:layout_height="match_parent"
-                  android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingBottom="10dp"
+                  android:paddingLeft="20dp" android:paddingTop="4dp" android:paddingBottom="4dp"
                   android:text="@string/on_destroy" android:textSize="18sp" android:textColor="@android:color/background_dark"/>
 
         <TextView android:layout_width="0dp"
@@ -136,7 +136,7 @@
         <TextView android:layout_width="0dp"
                   android:layout_weight="2"
                   android:layout_height="match_parent"
-                  android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingBottom="10dp"
+                  android:paddingLeft="20dp" android:paddingTop="4dp" android:paddingBottom="4dp"
                   android:text="@string/on_save_instance_state" android:textSize="18sp" android:textColor="@android:color/background_dark"/>
 
         <TextView android:layout_width="0dp"
@@ -154,7 +154,7 @@
         <TextView android:layout_width="0dp"
                   android:layout_weight="2"
                   android:layout_height="match_parent"
-                  android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingBottom="10dp"
+                  android:paddingLeft="20dp" android:paddingTop="4dp" android:paddingBottom="4dp"
                   android:text="@string/on_restore_instance_state" android:textSize="18sp" android:textColor="@android:color/background_dark"/>
 
         <TextView android:layout_width="0dp"

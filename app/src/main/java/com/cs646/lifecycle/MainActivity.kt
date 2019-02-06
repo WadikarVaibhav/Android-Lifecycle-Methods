@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         Log.i(Constants.ON_START, onStartCount.toString())
     }
 
+    /**
+     * compare bundle and shared pref values
+     */
     private fun compareSharedPrefWithBundle(savedInstanceState: Bundle?) {
         if (savedInstanceState != null) {
             Log.i(savedInstanceState.getInt(Constants.ON_CREATE_COUNT).toString(), getValueFromSharedPrefs(Constants.ON_CREATE_COUNT).toString())
@@ -43,6 +46,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Restore values from bundle and store into shared prefs
+     */
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
         compareSharedPrefWithBundle(savedInstanceState)
@@ -87,6 +93,9 @@ class MainActivity : AppCompatActivity() {
         Log.i(Constants.ON_PAUSE, onPauseCount.toString())
     }
 
+    /**
+     * Save values in bundle to restore back state even after activity is destroyed
+     */
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
         var onSaveInstanceStateCount = getValueFromSharedPrefs(Constants.ON_SAVE_INSTANCE_STATE_COUNT)
@@ -135,6 +144,9 @@ class MainActivity : AppCompatActivity() {
         editor.apply()
     }
 
+    /**
+     * Show all records on initial render
+     */
     private fun showAllRecords() {
         val sharedPreferences = getSharedPreferences(packageName+Constants.SHARED_PREF_FILE, Context.MODE_PRIVATE)
         onCreate.text = sharedPreferences.getInt(Constants.ON_CREATE_COUNT, 0).toString()
